@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include joenyland.dropbear_initramfs"
+      include_role:
+        name: "joenyland.dropbear_initramfs"

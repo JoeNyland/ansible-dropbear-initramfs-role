@@ -1,0 +1,14 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: '${IMAGE:-geerlingguy/docker-debian11-ansible}'
+    pre_build_image: true
+    command: ""
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
