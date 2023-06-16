@@ -5,3 +5,7 @@
     - name: "Include joenyland.dropbear_initramfs"
       include_role:
         name: "joenyland.dropbear_initramfs"
+      vars:
+        dropbear_initramfs_options: '-c /usr/bin/zfsunlock'
+        dropbear_initramfs_ssh_authorized_keys:
+          - https://github.com/joenyland.keys
