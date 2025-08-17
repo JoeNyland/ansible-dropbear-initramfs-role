@@ -17,16 +17,16 @@
         user: root
         key: "{{ item }}"
         exclusive: true  # Only allow keys specified here
-        path: /etc/dropbear-initramfs/authorized_keys
+        path: /etc/dropbear/initramfs/authorized_keys
       with_items: "{{ dropbear_initramfs_ssh_authorized_keys }}"
       notify: Update initramfs
 
     - name: Configure options
       lineinfile:
-        path: /etc/dropbear-initramfs/config
+        path: /etc/dropbear/initramfs/dropbear.conf
         insertafter: "^#DROPBEAR_OPTIONS="
         line: "DROPBEAR_OPTIONS='{{ dropbear_initramfs_options }}'"
         create: true
-        mode: 0644
+        mode: '0644'
       when: dropbear_initramfs_options | length > 0
       notify: Update initramfs
