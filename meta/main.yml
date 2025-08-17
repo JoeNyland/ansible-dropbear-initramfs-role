@@ -9,7 +9,6 @@ galaxy_info:
   - name: Debian
     versions:
       - bookworm # 12 (stable)
-      - bullseye # 11 (oldstable)
   galaxy_tags:
     - debian
     - dropbear
